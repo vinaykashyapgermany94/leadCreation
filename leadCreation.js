@@ -1,6 +1,8 @@
 console.log('Yay!! I can access the js file');
 
-
+let firstNameErrorDivElement = document.getElementById('firstNameValidation');
+let lastNameValidationElement = document.getElementById('lastNameValidation');    
+let emailValidationElement = document.getElementById('emailValidation');
 
 let inputEntries = document.addEventListener('change', (evt)=>{
     console.log('evt.target.id :'+evt.target.id);
@@ -9,11 +11,41 @@ let inputEntries = document.addEventListener('change', (evt)=>{
     if(evt.target.id == "first_name")
     {
         let firstNameValue = evt.target.value;
-        if(firstNameValue == '')
+        if(firstNameValue != '')
         {
-            console.log('firstNameElement :'+firstNameElement);
+            if(firstNameErrorDivElement.firstChild != undefined)
+            {
+                firstNameErrorDivElement.removeChild(firstNameErrorDivElement.firstChild);
+            }
         }//end of if(firstNameValue == '')    
     }//end of if(evt.target.id == "first_name")    
+
+    if(evt.target.id == "last_name")
+    {
+        let lastNameValue = evt.target.value;
+        if(lastNameValue != '')
+        {
+            if(lastNameValidationElement.firstChild != undefined)
+            {
+                lastNameValidationElement.removeChild(lastNameValidationElement.firstChild);
+            }
+        }//end of if(firstNameValue == '')    
+    }//end of if(evt.target.id == "first_name") 
+
+    if(evt.target.id == "email")
+    {
+        let emailValue = evt.target.value;
+        if(emailValue != '')
+        {
+            if(emailValue.indexOf('@') != -1 && emailValue.indexOf('.') != -1)
+            {
+                if(emailValidationElement.firstChild != undefined)
+                {
+                    emailValidationElement.removeChild(emailValidationElement.firstChild);
+                }
+            }    
+        }//end of if(firstNameValue == '')    
+    }//end of if(evt.target.id == "first_name") 
 });
 
 let submitEvent = document.addEventListener('submit',(evt)=>{
@@ -25,10 +57,6 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
     let lastNameElement = document.querySelector('#last_name');
     let emailElement = document.querySelector('#email');
     let startDateElement = document.querySelector('.start_date');
-
-    let firstNameErrorDivElement = document.getElementById('firstNameValidation');
-    let lastNameValidationElement = document.getElementById('lastNameValidation');    
-    let emailValidationElement = document.getElementById('emailValidation');
 
     console.log('firstNameElement :'+firstNameElement.value);
     console.log('lastNameElement :'+lastNameElement.value);
