@@ -123,7 +123,7 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
     if(emailElement.value != '')
     {
         let emailValue = emailElement.value;
-        if(emailValue.indexOf('@') == -1 && emailValue.indexOf('.') == -1)
+        if(emailValue.indexOf('@') == -1 || emailValue.indexOf('.') == -1)
         {
             isValid = false;
 
