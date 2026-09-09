@@ -150,19 +150,18 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
     
     if(startDateElement.value == '')
     {
-        const currentDate = Date();
-        const currentDateWithLocale = new Date(currentDate.toLocaleString("de-DE"));
-        console.log('currentDateWithLocale :'+currentDateWithLocale);
+        const currentDate = new Date();
 
-        startDateElement.value = currentDateWithLocale.toISOString().split('T')[0];
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        const isoDate = `${year}-${month}-${day}`;
+
+        console.log('isoDate :' + isoDate);
+        startDateElement.value = isoDate;
+
     }//end of if(startDateElement.value == '')
-    else
-    {
-        let dateValue = startDateElement.value;
-        const currentDateWithLocale = new Date(dateValue.toLocaleString("de-DE"));
-        console.log('currentDateWithLocale :'+currentDateWithLocale);
-        startDateElement.value = currentDateWithLocale.toISOString().split('T')[0];
-    }    
+    
     if(captchaFlag == false)
     {
         let captchaErrorElement = document.createElement('p');
