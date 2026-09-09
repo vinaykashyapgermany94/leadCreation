@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="leadCreation.css"></link>
+        <script src="leadCreation.js"></script>
+    </head>
+    <body>
+        <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+        <div class="mainDiv">
+            <h1>Web to Lead Form</h1>
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQy00000qeU4m" method="POST" id="webToLeadForm">
+                <input type=hidden name="oid" value="00DQy00000qeU4m">
+                <input type=hidden name="retURL" value="">
+                <div class="formEntryDiv">
+                    <label for="first_name" class="formEntry">First Name : </label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" class="formEntry"/><br>
+                    <div class="validationDiv" id="firstNameValidation"></div>
+                </div>
+                <div class="formEntryDiv"> 
+                    <label for="last_name" class="formEntry">Last Name : </label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" class="formEntry"/><br>
+                    <div class="validationDiv" id="lastNameValidation"></div>
+                </div>   
+                <div class="formEntryDiv"> 
+                    <label for="email" class="formEntry">Email Address : </label><input  id="email" maxlength="80" name="email" size="20" type="text" class="formEntry"/><br>
+                    <div class="validationDiv" id="emailValidation"></div>
+                </div>  
+                <div class="formEntryDiv">  
+                    <label for="company" class="formEntry">Company : </label><input  id="company" maxlength="40" name="company" size="20" type="text" class="formEntry"/><br>
+                </div>
+                <div class="formEntryDiv">  
+                    <label for="00NQy000028yOZh" class="formEntry">Lead Start Date : </label><input  id="00NQy000028yOZh" name="00NQy000028yOZh" size="12" maxlength="40" type="date" class="formEntry start_date"/><br>
+                    <div class="validationDiv" id="startDateValidation"></div>
+                </div>                    
+                    <input type="hidden"  id="lead_source" name="lead_source" value="Web" /><br>
+                <div class="submitBtnDiv">
+                    <button type="submit" class="submitBtn">Submit</button>
+                </div>
+                <!--
+                do not include name=submit attribute in button element- that blocks manual submission of the form in the event listener
+                <input type="submit" name="submit" class="submitBtn" 
+                />-->           
+            </form>
+        </div>    
+    </body>
+</html>
+

@@ -1,0 +1,59 @@
+.mainDiv
+{
+    background-color: bisque;
+    justify-self: center;
+    border-style:none;
+    width :fit-content;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+
+body
+{
+    background-color: aliceblue;
+}
+h1
+{
+    color : rgb(141, 4, 4);
+    justify-self: center;
+    text-decoration: underline;
+}
+
+.submitBtn
+{
+    background-color: rgb(65, 65, 241);
+    color: rgb(243, 235, 235);
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.formEntry
+{
+    font-size: 120%;
+    font-family: 'Times New Roman', Times, serif;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.submitBtnDiv
+{
+    justify-self: center; 
+}
+
+.formEntryDiv
+{
+    padding: 20px;
+}
+
+.validationDiv
+{
+    font-size: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
