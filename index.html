@@ -7,9 +7,14 @@
     </head>
     <body>
         <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script>
+        function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+        </script>            
         <div class="mainDiv">
             <h1>Web to Lead Form</h1>
             <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DQy00000qeU4m" method="POST" id="webToLeadForm">
+                <input type=hidden name='captcha_settings' value='{"keyname":"WebToLeadForm","fallback":"true","orgId":"00DQy00000qeU4m","ts":""}'>
                 <input type=hidden name="oid" value="00DQy00000qeU4m">
                 <input type=hidden name="retURL" value="https://vinaykashyapgermany94.github.io/leadCreation/acknowledge.html">
                 <div class="formEntryDiv">
@@ -32,6 +37,7 @@
                     <div class="validationDiv" id="startDateValidation"></div>
                 </div>                    
                     <input type="hidden"  id="lead_source" name="lead_source" value="Web" /><br>
+                    <div class="g-recaptcha" data-sitekey="6Lf3y7ItAAAAALyx0hKxrLlfdvy_Hjl61OWj9v8L"></div><br>
                 <div class="submitBtnDiv">
                     <button type="submit" class="submitBtn">Submit Form</button>
                 </div>
