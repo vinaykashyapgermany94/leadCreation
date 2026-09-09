@@ -37,7 +37,9 @@
                     <div class="validationDiv" id="startDateValidation"></div>
                 </div>                    
                     <input type="hidden"  id="lead_source" name="lead_source" value="Web" /><br>
-                    <div class="g-recaptcha" data-sitekey="6Lf3y7ItAAAAALyx0hKxrLlfdvy_Hjl61OWj9v8L"></div><br>
+                    <div class="g-recaptcha recap" data-callback="setCaptchaFlag" data-sitekey="6Lf3y7ItAAAAALyx0hKxrLlfdvy_Hjl61OWj9v8L">
+                    </div><br>
+                    <div class="validationDiv" id="captchaValidation"></div>
                 <div class="submitBtnDiv">
                     <button type="submit" class="submitBtn">Submit Form</button>
                 </div>

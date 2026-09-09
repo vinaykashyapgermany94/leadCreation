@@ -57,3 +57,8 @@ h1
     font-family: 'Times New Roman', Times, serif;
     color: red;
 }
+
+.recap
+{
+    justify-self: center;
+}

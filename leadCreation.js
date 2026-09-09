@@ -1,5 +1,5 @@
 console.log('Yay!! I can access the js file');
-
+let captchaFlag = false;
 let inputEntries = document.addEventListener('change', (evt)=>{
     console.log('evt.target.id :'+evt.target.id);
     console.log('evt.target.value :'+evt.target.value);
@@ -7,6 +7,7 @@ let inputEntries = document.addEventListener('change', (evt)=>{
     let firstNameErrorDivElement = document.getElementById('firstNameValidation');
     let lastNameValidationElement = document.getElementById('lastNameValidation');    
     let emailValidationElement = document.getElementById('emailValidation');
+    let captchaValidationElement = document.getElementById('captchaValidation');
 
     if(evt.target.id == "first_name")
     {
@@ -46,6 +47,14 @@ let inputEntries = document.addEventListener('change', (evt)=>{
             }    
         }//end of if(firstNameValue == '')    
     }//end of if(evt.target.id == "first_name") 
+
+    if(captchaFlag == true)
+    {
+        if(captchaValidationElement.firstChild != undefined)
+        {
+            captchaValidationElement.removeChild(captchaValidationElement.firstChild);
+        }
+    }    
 });
 
 let submitEvent = document.addEventListener('submit',(evt)=>{
@@ -61,6 +70,7 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
     let firstNameErrorDivElement = document.getElementById('firstNameValidation');
     let lastNameValidationElement = document.getElementById('lastNameValidation');    
     let emailValidationElement = document.getElementById('emailValidation');
+    let captchaValidationElement = document.getElementById('captchaValidation');
 
     console.log('firstNameElement :'+firstNameElement.value);
     console.log('lastNameElement :'+lastNameElement.value);
@@ -153,9 +163,35 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
         console.log('currentDateWithLocale :'+currentDateWithLocale);
         startDateElement.value = currentDateWithLocale.toISOString().split('T')[0];
     }    
+    if(captchaFlag == false)
+    {
+        let captchaErrorElement = document.createElement('p');
+        captchaErrorElement.innerText = 'Please make sure to select the captcha before submitting the form';
+
+        if(captchaValidationElement.firstChild != undefined)
+        {
+            captchaValidationElement.replaceChild(captchaErrorElement, captchaValidationElement.firstChild);
+        }    
+        else
+        {
+            captchaValidationElement.appendChild(captchaErrorElement);
+        }
+    } 
+    else
+    {
+        if(captchaValidationElement.firstChild != undefined)
+        {
+            captchaValidationElement.removeChild(captchaValidationElement.firstChild);
+        }
+    }       
     
     if(isValid)
     {
         formElement.submit();
-    }//end of if(isValid)  
+    }//end of if(isValid)   
 });//end of submitEvent
+
+function setCaptchaFlag()
+{
+    captchaFlag = true;
+}
