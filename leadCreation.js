@@ -1,12 +1,12 @@
 console.log('Yay!! I can access the js file');
 
-let firstNameErrorDivElement = document.getElementById('firstNameValidation');
-let lastNameValidationElement = document.getElementById('lastNameValidation');    
-let emailValidationElement = document.getElementById('emailValidation');
-
 let inputEntries = document.addEventListener('change', (evt)=>{
     console.log('evt.target.id :'+evt.target.id);
     console.log('evt.target.value :'+evt.target.value);
+
+    let firstNameErrorDivElement = document.getElementById('firstNameValidation');
+    let lastNameValidationElement = document.getElementById('lastNameValidation');    
+    let emailValidationElement = document.getElementById('emailValidation');
 
     if(evt.target.id == "first_name")
     {
@@ -57,6 +57,10 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
     let lastNameElement = document.querySelector('#last_name');
     let emailElement = document.querySelector('#email');
     let startDateElement = document.querySelector('.start_date');
+
+    let firstNameErrorDivElement = document.getElementById('firstNameValidation');
+    let lastNameValidationElement = document.getElementById('lastNameValidation');    
+    let emailValidationElement = document.getElementById('emailValidation');
 
     console.log('firstNameElement :'+firstNameElement.value);
     console.log('lastNameElement :'+lastNameElement.value);
