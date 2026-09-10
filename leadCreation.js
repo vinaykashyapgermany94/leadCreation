@@ -157,7 +157,7 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
         const month = String(currentDate.getMonth() + 1).padStart(2, '0');
         const day = String(currentDate.getDate()).padStart(2, '0');
         const isoDate = `${year}-${month}-${day}`;
-        const germanDate = `${day}-${month}-${year}`;
+        const germanDate = `${month}/${day}/${year}`;
 
         console.log('isoDate :' +isoDate);
         console.log('germanDate :' +germanDate);
@@ -171,7 +171,7 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
         const year = currentDate.getFullYear();
         const month = String(currentDate.getMonth() + 1).padStart(2, '0');
         const day = String(currentDate.getDate()).padStart(2, '0');
-        const germanDate = `${day}-${month}-${year}`;  
+        const germanDate = `${month}/${day}/${year}`;  
         console.log('germanDate :' +germanDate); 
         germanStartDateElement.value = germanDate;     
     }    
