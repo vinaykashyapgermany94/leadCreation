@@ -66,6 +66,7 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
     let lastNameElement = document.querySelector('#last_name');
     let emailElement = document.querySelector('#email');
     let startDateElement = document.querySelector('.start_date');
+    let germanStartDateElement = document.querySelector('.germanFormattedDate');
 
     let firstNameErrorDivElement = document.getElementById('firstNameValidation');
     let lastNameValidationElement = document.getElementById('lastNameValidation');    
@@ -156,11 +157,24 @@ let submitEvent = document.addEventListener('submit',(evt)=>{
         const month = String(currentDate.getMonth() + 1).padStart(2, '0');
         const day = String(currentDate.getDate()).padStart(2, '0');
         const isoDate = `${year}-${month}-${day}`;
+        const germanDate = `${day}-${month}-${year}`;
 
-        console.log('isoDate :' + isoDate);
+        console.log('isoDate :' +isoDate);
+        console.log('germanDate :' +germanDate);
         startDateElement.value = isoDate;
-
+        germanStartDateElement.value = germanDate;
     }//end of if(startDateElement.value == '')
+    else
+    {
+        const currentDate = new Date(startDateElement.value);
+
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        const germanDate = `${day}-${month}-${year}`;  
+        console.log('germanDate :' +germanDate); 
+        germanStartDateElement.value = germanDate;     
+    }    
     
     if(captchaFlag == false)
     {
