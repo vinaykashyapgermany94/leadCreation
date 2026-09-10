@@ -1,4 +1,4 @@
-console.log('Yay!! I can access the js file');
+//console.log('Yay!! I can access the js file');
 let captchaFlag = false;
 let inputEntries = document.addEventListener('change', (evt)=>{
     console.log('evt.target.id :'+evt.target.id);
